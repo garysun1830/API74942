@@ -20,6 +20,12 @@ namespace HAA.Data
             return value >= 0 ? "+" + value.ToString() : value.ToString();
         }
 
+        public string[] GetLookupNameApiParams(string Name)
+        {
+            string url = url_root.Replace("://", "_").Replace("/", "_").Replace(".", "_");
+            return new string[] { url, Name };
+        }
+
         public string LookupName(decimal Lat, decimal Lang)
         {
             string pos = ConvertPos(Lat) + ConvertPos(Lang);

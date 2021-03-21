@@ -17,5 +17,6 @@ namespace APIHome.Data.All.Access.EF
         public int COUNTER_ID { get; set; }
         public string CATEGORY { get; set; }
         public Nullable<int> VALUE { get; set; }
+        public string URL { get; set; }
     }
 }

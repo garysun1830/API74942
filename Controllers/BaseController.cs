@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HAA.Service;
+using System;
 using System.Web.Http;
+using Unity;
 
 namespace APIHome.Controllers
 {
@@ -14,9 +16,12 @@ namespace APIHome.Controllers
             }
             catch (Exception ex)
             {
+                ILogService svc = UnityHelper.UnityContainer.Resolve<ILogService>();
+                svc.Log(ex);
                 return new Exception(ex.Message.Replace("\\n", "").Replace("\\r", ""));
             }
         }
 
     }
 }
+

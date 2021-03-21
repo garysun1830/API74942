@@ -6,7 +6,7 @@ namespace HAA.Service
     {
         void Log(Exception e);
         void Log(string Message);
-        void LogApiCount(string Name);
-        int GetApiCount(string Name);
+        void LogApiCount(string URL, string Name);
+        int GetApiCount(string URL, string Name);
     }
 }

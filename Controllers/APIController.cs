@@ -1,13 +1,8 @@
-﻿using HAA.Data;
-using HAA.Service;
-using Newtonsoft.Json;
+﻿using HAA.Service;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Unity;
-using Unity.Resolution;
 
 namespace APIHome.Controllers
 {
@@ -16,14 +11,14 @@ namespace APIHome.Controllers
     public class APIController : BaseController
     {
 
-        [HttpGet, Route("RequestCount/{RequestName}")]
-        public IHttpActionResult GetRequestCount(string RequestName)
+        [HttpGet, Route("RequestCount/{URL}/{RequestName}")]
+        public IHttpActionResult GetRequestCount(string URL, string RequestName)
         {
             int result = 0;
             Exception ret = DoService(() =>
             {
                 IHAAService haaSvc = UnityHelper.UnityContainer.Resolve<IHAAService>();
-                result = haaSvc.GetCount(RequestName);
+                result = haaSvc.GetApiCount(URL, RequestName);
             });
             if (ret == null) return Ok(new { RequestCount = result });
             return Ok(ret);

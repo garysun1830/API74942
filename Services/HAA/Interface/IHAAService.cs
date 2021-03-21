@@ -2,7 +2,7 @@
 {
     public interface IHAAService
     {
-        int GetCount(string RequestName);
+        int GetApiCount(string URL, string RequestName);
         string LookupName(decimal Lat, decimal Lang);
     }
 }

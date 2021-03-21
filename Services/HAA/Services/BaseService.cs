@@ -1,8 +1,6 @@
 ﻿using APIHome;
-using APIHome.Services;
 using System;
 using Unity;
-using Unity.Resolution;
 
 namespace HAA.Service
 {
@@ -11,13 +9,13 @@ namespace HAA.Service
 
         protected void ExecuteService(Action act)
         {
-            ILogService svc = UnityHelper.UnityContainer.Resolve<ILogService>();
             try
             {
                 act();
             }
             catch (Exception ex)
             {
+                ILogService svc = UnityHelper.UnityContainer.Resolve<ILogService>();
                 svc.Log(ex);
                 throw ex;
             }

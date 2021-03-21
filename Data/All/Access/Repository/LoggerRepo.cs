@@ -18,14 +18,16 @@ namespace APIHome.Data
             }
         }
 
-        public void LogApiCount(string Name)
+        public void LogApiCount(string URL, string Name)
         {
             using (APIHomeSitEntities ctx = new APIHomeSitEntities())
             {
-                COUNTER rec = ctx.COUNTERs.FirstOrDefault(ct => ct.CATEGORY == Name);
+                COUNTER rec = ctx.COUNTERs.FirstOrDefault(ct => ct.URL == URL && ct.CATEGORY == Name);
                 if (rec == null)
                 {
                     rec = new COUNTER();
+                    rec.URL = URL;
+                    rec.CATEGORY = Name;
                     ctx.COUNTERs.Add(rec);
                 }
                 rec.VALUE = (rec.VALUE ?? 0) + 1;
@@ -33,11 +35,11 @@ namespace APIHome.Data
             }
         }
 
-        public int GetApiCount(string Name)
+        public int GetApiCount(string URL, string Name)
         {
             using (APIHomeSitEntities ctx = new APIHomeSitEntities())
             {
-                var rec = ctx.COUNTERs.FirstOrDefault(ct => ct.CATEGORY == Name);
+                var rec = ctx.COUNTERs.FirstOrDefault(ct => ct.URL == URL && ct.CATEGORY == Name);
                 return rec == null ? 0 : rec.VALUE ?? 0;
             }
         }

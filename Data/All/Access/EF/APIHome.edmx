@@ -12,6 +12,7 @@
           <Property Name="COUNTER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" />
           <Property Name="VALUE" Type="int" />
+          <Property Name="URL" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="LOGGING">
           <Key>
@@ -50,6 +51,7 @@
           <Property Name="COUNTER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="VALUE" Type="Int32" />
+          <Property Name="URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -70,6 +72,7 @@
           <EntitySetMapping Name="COUNTERs">
             <EntityTypeMapping TypeName="APIHomeSitModel.COUNTER">
               <MappingFragment StoreEntitySet="COUNTER">
+                <ScalarProperty Name="URL" ColumnName="URL" />
                 <ScalarProperty Name="VALUE" ColumnName="VALUE" />
                 <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
                 <ScalarProperty Name="COUNTER_ID" ColumnName="COUNTER_ID" />

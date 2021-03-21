@@ -1,6 +1,5 @@
 ﻿using APIHome;
 using APIHome.Data;
-using HAA.Data;
 using System;
 using Unity;
 
@@ -25,13 +24,13 @@ namespace HAA.Service
             Log(e.Message);
         }
 
-        public void LogApiCount(string Name)
+        public void LogApiCount(string URL, string Name)
         {
-            repo.LogApiCount(Name);
+            repo.LogApiCount(URL, Name);
         }
-        public int GetApiCount(string Name)
+        public int GetApiCount(string URL, string Name)
         {
-            return repo.GetApiCount(Name);
+            return repo.GetApiCount(URL, Name);
         }
 
 
