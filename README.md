@@ -23,7 +23,7 @@
   - For 1st time release:
     - Install Visual Studio 2019 on the Jenkins server.
     - Ceate each Jenkins workflow for Test and Production.
-    - This workflow configures to get the source code from this Github repository to the Jenkins Workspace.
+    - This workflow configures to checkout the master branch from this Github repository to the Jenkins Workspace.
     - The workflow configures to trigger Visual Studio 2019 to publish the solution in the Workspace to the folder that IIS Server specifies on the server,  accordingly.
   - Run Workflow/Build using the "Build" button, accordingly.
 # Release SQL Server from Dev to the Test and Production environment
