@@ -12,6 +12,12 @@
   -  Create a publish profile.
   -  Publish using the "publish" button.
 2. Copy files:
-  - Copy the whole project folder to the folder that IIS Server specifies.
+  - Build the solution.
+  - Copy the whole solution folder to the folder that IIS Server specifies on the server.
 3. Using Jenkins:
-  - For 1st time release, create a Jenkins workflow. This workflow get the source code 
+  - For 1st time release:
+    - Install Visual Studio 2019 on the Jenkins server.
+    - Ceate a Jenkins workflow. 
+    - This workflow configures to get the source code from this Github repository to the Jenkins Workspace.
+    - The workflow configures to trigger Visual Studio 2019 to publish the solution in the Workspace to the folder that IIS Server specifies on the server.
+  - Run Workflow/Build using the "Build" button.
