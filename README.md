@@ -9,15 +9,17 @@
 - ## The IIS Server is hosted on Windows 10 or above.
 # Release from Dev to the Test and Production environment
 1. Using Visual Studio:
-  -  Create a publish profile.
-  -  Publish using the "publish" button.
+  - In the development evironment.
+  - Create each publish profile for Test and Production.
+  - Publish each profile, using the "publish" button, accordingly.
 2. Copy files:
+  - In the development evironment.
   - Build the solution.
-  - Copy the whole solution folder to the folder that IIS Server specifies on the server.
+  - Copy the whole solution folder to the folder that IIS Server specifies on the server, accordingly.
 3. Using Jenkins:
   - For 1st time release:
     - Install Visual Studio 2019 on the Jenkins server.
-    - Ceate a Jenkins workflow. 
+    - Ceate each Jenkins workflow for Test and Production.
     - This workflow configures to get the source code from this Github repository to the Jenkins Workspace.
-    - The workflow configures to trigger Visual Studio 2019 to publish the solution in the Workspace to the folder that IIS Server specifies on the server.
-  - Run Workflow/Build using the "Build" button.
+    - The workflow configures to trigger Visual Studio 2019 to publish the solution in the Workspace to the folder that IIS Server specifies on the server,  accordingly.
+  - Run Workflow/Build using the "Build" button, accordingly.
