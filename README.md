@@ -4,6 +4,9 @@
 - ## this web application runs on IIS.
 - ## the API methods is defined in APIController.cs.
 - ## the API parameters in defined in web.config.
+# SQL Scripts
+  - ## Requests have been made against the API:
+    - SELECT VALUE FROM COUNTER WHERE (CATEGORY = N'LookupName') AND (URL = N'https_openmaps_gov_bc_ca_geo_pub_ows')
 # Server envrionment
 - ## This web application runs on Windows IIS Server V10 or above.
 - ## The IIS Server is hosted on Windows 10 or above.
