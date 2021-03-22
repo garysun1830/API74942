@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace HAA.Data
 {
+    /// <summary>
+    /// The caller to call the HAA REST API
+    /// </summary>
     public class HAAApi : IHAAApi
     {
 
@@ -28,10 +31,12 @@ namespace HAA.Data
 
         public string LookupName(decimal Lat, decimal Lang)
         {
+            // calling the HAA REST API. URL and parameters are in web.config
             string pos = ConvertPos(Lat) + ConvertPos(Lang);
             string url = string.Format("{0}{1}", url_root, string.Format(ConfigurationManager.AppSettings["API_LOOKUP_AREA_NAME"], pos));
             using (WebClient wc = new WebClient())
             {
+                //call the API and parse the result
                 string text = wc.DownloadString(url);
                 Match m = Regex.Match(text, "\"CMNTY_HLTH_SERV_AREA_NAME\" *: *\".+");
                 if (!m.Success)

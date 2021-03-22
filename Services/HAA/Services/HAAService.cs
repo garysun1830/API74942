@@ -7,6 +7,9 @@ using Unity.Resolution;
 
 namespace HAA.Service
 {
+    /// <summary>
+    /// The service to call the HAA REST API
+    /// </summary>
     public class HAAService : IHAAService
     {
 

@@ -10,7 +10,12 @@ namespace APIHome.Controllers
     [RoutePrefix("api/haa")]
     public class APIController : BaseController
     {
-
+        /// <summary>
+        /// To get the count of the give API method called by the clients
+        /// </summary>
+        /// <param name="URL"></param>
+        /// <param name="RequestName"></param>
+        /// <returns></returns>
         [HttpGet, Route("RequestCount/{URL}/{RequestName}")]
         public IHttpActionResult GetRequestCount(string URL, string RequestName)
         {
@@ -24,6 +29,12 @@ namespace APIHome.Controllers
             return Ok(ret);
         }
 
+        /// <summary>
+        /// To lookup the HAA name with the map postion
+        /// </summary>
+        /// <param name="Lat"></param>
+        /// <param name="Lang"></param>
+        /// <returns></returns>
         [HttpGet, Route("LookupName/{Lat}/{Lang}")]
         public IHttpActionResult LookupName(decimal Lat, decimal Lang)
         {

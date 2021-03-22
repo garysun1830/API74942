@@ -6,7 +6,10 @@ namespace HAA.Service
 {
     public class BaseService
     {
-
+        /// <summary>
+        /// the base method for the service methods
+        /// </summary>
+        /// <param name="act"></param>
         protected void ExecuteService(Action act)
         {
             try

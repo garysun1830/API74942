@@ -5,6 +5,9 @@ using Unity;
 
 namespace HAA.Service
 {
+    /// <summary>
+    /// The service to log message
+    /// </summary>
     public class LogService : ILogService
     {
         private readonly ILoggerRepo repo;

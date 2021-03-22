@@ -4,7 +4,9 @@ using System.Linq;
 
 namespace APIHome.Data
 {
-
+    /// <summary>
+    /// logger that log the given message in the database
+    /// </summary>
     public class LoggerRepo : ILoggerRepo
     {
 
@@ -18,6 +20,11 @@ namespace APIHome.Data
             }
         }
 
+        /// <summary>
+        /// For the given API method, with URL and method name, increase the count and save 
+        /// </summary>
+        /// <param name="URL"></param>
+        /// <param name="Name"></param>
         public void LogApiCount(string URL, string Name)
         {
             using (APIHomeSitEntities ctx = new APIHomeSitEntities())
@@ -35,6 +42,12 @@ namespace APIHome.Data
             }
         }
 
+        /// <summary>
+        /// For the given API method, with URL and method name, get the count 
+        /// </summary>
+        /// <param name="URL"></param>
+        /// <param name="Name"></param>
+        /// <returns></returns>
         public int GetApiCount(string URL, string Name)
         {
             using (APIHomeSitEntities ctx = new APIHomeSitEntities())
