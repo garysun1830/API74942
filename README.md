@@ -26,7 +26,7 @@
 # Release SQL Server from Dev to the Test and Production environment
   - For 1st time release:
     - DBA copies the SQL Server databases to the Test and Production SQL Server databases,  accordingly.
-  - DBA create the SQL scripts to bring in all the changes, schema and data
+  - DBA create the SQL scripts to bring in all the changes, for schema and data
   - DBA run the SQL scripts on the the Test and Production SQL Server databases,  accordingly.
 # Continiously Release  
   - Create Jenkins Workflows
