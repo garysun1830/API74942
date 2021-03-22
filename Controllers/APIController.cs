@@ -25,7 +25,7 @@ namespace APIHome.Controllers
                 IHAAService haaSvc = UnityHelper.UnityContainer.Resolve<IHAAService>();
                 result = haaSvc.GetApiCount(URL, RequestName);
             });
-            if (ret == null) return Ok(new { RequestCount = result });
+            if (ret == null) return Ok(result);
             return Ok(ret);
         }
 
@@ -44,7 +44,7 @@ namespace APIHome.Controllers
                 IHAAService haaSvc = UnityHelper.UnityContainer.Resolve<IHAAService>();
                 result = haaSvc.LookupName(Lat, Lang);
             });
-            if (ret == null) return Ok(new { HAAName = result });
+            if (ret == null) return Ok(result);
             return Ok(ret);
         }
 
