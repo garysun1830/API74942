@@ -7,7 +7,7 @@
 # Server envrionment
 - ## This web application runs on Windows IIS Server V10 or above.
 - ## The IIS Server is hosted on Windows 10 or above.
-# Release from Dev to the Test and Production environment
+# Release Code from Dev to the Test and Production environment
 1. Using Visual Studio:
   - In the development evironment.
   - Create each publish profile for Test and Production.
@@ -23,3 +23,11 @@
     - This workflow configures to get the source code from this Github repository to the Jenkins Workspace.
     - The workflow configures to trigger Visual Studio 2019 to publish the solution in the Workspace to the folder that IIS Server specifies on the server,  accordingly.
   - Run Workflow/Build using the "Build" button, accordingly.
+# Continiously Release  
+  - Create Jenkins Workflows
+  - Configure the Workflows to trigger building by the repository changes, or with schedules
+# Release SQL Server from Dev to the Test and Production environment
+  - For 1st time release:
+    - DBA copies the SQL Server databases to the Test and Production SQL Server databases,  accordingly.
+  - DBA create the SQL scripts to bring in all the changes, schema and data
+  - DBA run the SQL scripts on the the Test and Production SQL Server databases,  accordingly.
